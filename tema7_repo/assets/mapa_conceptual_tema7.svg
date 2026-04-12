@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+  <defs>
+    <style>
+      .title{font:700 34px Arial,sans-serif;fill:#111}
+      .subtitle{font:600 18px Arial,sans-serif;fill:#555}
+      .node{fill:#eef4ff;stroke:#8da9e8;stroke-width:2;rx:18;ry:18}
+      .main{fill:#f7fbff;stroke:#5c7fe0;stroke-width:3;rx:20;ry:20}
+      .blank{fill:#fff7ea;stroke:#e8b458;stroke-width:2;stroke-dasharray:8 6;rx:18;ry:18}
+      .text{font:600 20px Arial,sans-serif;fill:#1d2738}
+      .small{font:600 18px Arial,sans-serif;fill:#1d2738}
+      .line{stroke:#6f86b9;stroke-width:3;fill:none}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6f86b9"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1100" fill="#ffffff"/>
+  <text x="118" y="70" class="title">Tema 7 · Gestión de conflictos y reclamaciones</text>
+  <text x="118" y="105" class="subtitle">Mapa conceptual para completar y subir al EVAGD</text>
+
+  <rect x="80" y="420" width="270" height="90" class="main"/>
+  <text x="115" y="472" class="text">GESTIÓN DE CONFLICTOS</text>
+  <text x="150" y="500" class="text">Y RECLAMACIONES</text>
+
+  <path d="M350 465 C420 465, 470 180, 560 180" class="line" marker-end="url(#arrow)"/>
+  <path d="M350 465 C430 465, 470 310, 560 310" class="line" marker-end="url(#arrow)"/>
+  <path d="M350 465 C430 465, 470 465, 560 465" class="line" marker-end="url(#arrow)"/>
+  <path d="M350 465 C430 465, 470 620, 560 620" class="line" marker-end="url(#arrow)"/>
+  <path d="M350 465 C420 465, 470 820, 560 820" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="560" y="130" width="300" height="95" class="node"/>
+  <text x="604" y="178" class="text">Satisfacción del</text>
+  <text x="648" y="206" class="text">cliente</text>
+
+  <rect x="930" y="120" width="300" height="60" class="blank"/>
+  <text x="987" y="158" class="text">Expectativas previas</text>
+  <path d="M860 178 C890 178, 895 150, 930 150" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="930" y="200" width="300" height="60" class="blank"/>
+  <text x="988" y="238" class="text">Experiencia de uso</text>
+  <path d="M860 178 C890 178, 895 230, 930 230" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="560" y="260" width="300" height="95" class="node"/>
+  <text x="594" y="308" class="text">Protección de los</text>
+  <text x="600" y="336" class="text">derechos del consumidor</text>
+
+  <rect x="930" y="260" width="300" height="60" class="blank"/>
+  <text x="1002" y="298" class="small">Derechos básicos</text>
+  <path d="M860 308 C890 308, 895 290, 930 290" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="930" y="340" width="300" height="60" class="blank"/>
+  <text x="1012" y="378" class="small">Garantía legal</text>
+  <path d="M860 308 C890 308, 895 370, 930 370" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="560" y="415" width="300" height="95" class="node"/>
+  <text x="644" y="463" class="text">Reclamación</text>
+  <text x="604" y="491" class="small">y hoja oficial</text>
+
+  <rect x="930" y="420" width="300" height="60" class="blank"/>
+  <text x="999" y="458" class="small">Datos del reclamante</text>
+  <path d="M860 463 C890 463, 895 450, 930 450" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="930" y="500" width="300" height="60" class="blank"/>
+  <text x="1025" y="538" class="small">Solicitud</text>
+  <path d="M860 463 C890 463, 895 530, 930 530" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="1260" y="420" width="240" height="60" class="blank"/>
+  <text x="1309" y="458" class="small">Presentación</text>
+  <path d="M1230 450 C1245 450, 1245 450, 1260 450" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="560" y="570" width="330" height="100" class="node"/>
+  <text x="594" y="620" class="text">Gestión empresarial de</text>
+  <text x="645" y="648" class="text">reclamaciones</text>
+
+  <rect x="950" y="560" width="260" height="60" class="blank"/>
+  <text x="995" y="598" class="small">Respuesta diligente</text>
+  <path d="M890 620 C915 620, 920 590, 950 590" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="950" y="640" width="260" height="60" class="blank"/>
+  <text x="1020" y="678" class="small">Objetividad</text>
+  <path d="M890 620 C915 620, 920 670, 950 670" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="1260" y="560" width="240" height="60" class="blank"/>
+  <text x="1322" y="598" class="small">Cierre</text>
+  <path d="M1210 590 C1230 590, 1235 590, 1260 590" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="1260" y="640" width="240" height="60" class="blank"/>
+  <text x="1294" y="678" class="small">Mejora continua</text>
+  <path d="M1210 670 C1230 670, 1235 670, 1260 670" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="560" y="770" width="320" height="100" class="node"/>
+  <text x="607" y="820" class="text">Conflicto en el ámbito</text>
+  <text x="653" y="848" class="text">empresarial</text>
+
+  <rect x="950" y="760" width="280" height="60" class="blank"/>
+  <text x="1010" y="798" class="small">Estilo dominante</text>
+  <path d="M880 820 C910 820, 915 790, 950 790" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="950" y="840" width="280" height="60" class="blank"/>
+  <text x="1015" y="878" class="small">Negociación</text>
+  <path d="M880 820 C910 820, 915 870, 950 870" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="1260" y="760" width="240" height="60" class="blank"/>
+  <text x="1316" y="798" class="small">Acuerdo</text>
+  <path d="M1230 790 C1245 790, 1245 790, 1260 790" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="1260" y="840" width="240" height="60" class="blank"/>
+  <text x="1306" y="878" class="small">Mediación</text>
+  <path d="M1230 870 C1245 870, 1245 870, 1260 870" class="line" marker-end="url(#arrow)"/>
+
+  <text x="100" y="1035" class="subtitle">Indicaciones: completa los espacios, repasa relaciones entre conceptos y entrega la evidencia en EVAGD.</text>
+</svg>
