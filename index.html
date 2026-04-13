@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tema 7 · Gestión de conflictos y reclamaciones</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-row">
+        <div class="brand">
+          <h1>Tema 7 · Gestión de conflictos y reclamaciones</h1>
+          <p>Secuencia didáctica por fases con teoría, práctica, tipo test y validación docente.</p>
+        </div>
+        <div class="top-actions">
+          <div class="name-box">
+            <label for="studentName">Nombre del estudiante</label>
+            <input id="studentName" type="text" placeholder="Escribe tu nombre completo">
+          </div>
+          <button id="certificateBtn" class="secondary-btn" disabled>Ir al certificado</button>
+          <button id="resetBtn" class="ghost-btn">Borrar progreso</button>
+        </div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span>Progreso global</span>
+          <span id="progressText">0 de 9 fases validadas</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Completa teoría, práctica y test en cada fase</h2>
+        <p>Tu progreso se guarda automáticamente en este navegador. Realiza cada producto, súbelo al EVAGD y, cuando el docente lo haya revisado, valida la fase con el código que te facilite. Los test disponen de dos intentos y se superan con un 80 % de aciertos.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="heroContinue" class="secondary-btn">Empezar ahora</button>
+        <button id="heroCertificate" class="secondary-btn">Ir al certificado</button>
+      </div>
+    </section>
+
+    <main class="main-layout">
+      <aside class="sidebar">
+        <h3>Fases del tema</h3>
+        <p>Para avanzar, cada fase debe quedar validada por el docente tras la entrega de la evidencia en EVAGD.</p>
+        <div id="phaseList" class="phase-list"></div>
+      </aside>
+
+      <section class="content-panel">
+        <div id="content"></div>
+      </section>
+    </main>
+
+    <p class="footer-note">Repositorio preparado para GitHub Pages. Mantén <strong>index.html</strong> en la raíz del proyecto.</p>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
