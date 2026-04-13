@@ -1,6 +1,8 @@
 // =======================
-// PROGRESO
+// ESTADO GLOBAL
 // =======================
+
+let faseActual = 0;
 
 let progreso = JSON.parse(localStorage.getItem("progreso")) || {
   nombre: "",
@@ -13,16 +15,7 @@ function guardarProgreso() {
 }
 
 // =======================
-// CONTROL DE ACCESO
-// =======================
-
-function puedeAcceder(fase) {
-  if (fase === 0) return true;
-  return progreso.fasesCompletadas.includes(fase - 1);
-}
-
-// =======================
-// VALIDACIÓN DOCENTE
+// CODIGO DOCENTE
 // =======================
 
 function obtenerCodigoHoy() {
@@ -33,71 +26,85 @@ function obtenerCodigoHoy() {
   return `${dia}${mes}${anio}`;
 }
 
-function validarFase(faseActual) {
-  const input = document.getElementById("codigoInput");
-  const mensaje = document.getElementById("mensajeValidacion");
+// =======================
+// VALIDACIÓN FASE
+// =======================
 
-  const codigo = input.value;
+window.validarFase = function () {
+  const input = document.getElementById("teacherCodeInput");
+  const mensaje = document.getElementById("validationMessage");
+
+  const codigo = input.value.trim();
 
   if (codigo === obtenerCodigoHoy()) {
     if (!progreso.fasesCompletadas.includes(faseActual)) {
       progreso.fasesCompletadas.push(faseActual);
     }
-    guardarProgreso();
-    mensaje.innerText = "✅ Fase validada";
+    mensaje.innerText = "✅ Fase validada correctamente";
   } else {
     mensaje.innerText = "❌ Código incorrecto";
   }
 
-  input.value = ""; // limpia y oculta
-}
-
-// =======================
-// TEST (2 INTENTOS)
-// =======================
-
-function evaluarTest(fase, respuestas, correctas) {
-  let aciertos = 0;
-
-  respuestas.forEach((r, i) => {
-    if (r === correctas[i]) aciertos++;
-  });
-
-  const nota = aciertos / correctas.length;
-
-  if (!progreso.tests[fase]) {
-    progreso.tests[fase] = {
-      intentos: 0,
-      superado: false
-    };
-  }
-
-  progreso.tests[fase].intentos++;
-
-  if (nota >= 0.8) {
-    progreso.tests[fase].superado = true;
-    alert("✅ Test superado");
-  } else {
-    if (progreso.tests[fase].intentos >= 2) {
-      alert("❌ No superado. Se muestran las respuestas correctas.");
-      mostrarCorrectas(correctas);
-    } else {
-      alert("❌ No superado. Te queda 1 intento.");
-    }
-  }
-
+  input.value = ""; // 🔐 limpia campo
   guardarProgreso();
+  actualizarProgreso();
+};
+
+// =======================
+// RENDER FASE
+// =======================
+
+function renderFase() {
+  const content = document.getElementById("content");
+
+  content.innerHTML = `
+    <h2>Fase ${faseActual}</h2>
+
+    <div class="teacher-validation-box">
+      <h3>Validación docente</h3>
+      <p>
+        Cuando hayas subido la evidencia al EVAGD, introduce el código facilitado por el docente.
+      </p>
+
+      <div style="display:flex; gap:10px;">
+        <input id="teacherCodeInput" 
+               type="password" 
+               placeholder="Código del docente" 
+               autocomplete="off" />
+
+        <button onclick="validarFase()">Validar fase</button>
+      </div>
+
+      <p id="validationMessage">Pendiente de validación.</p>
+    </div>
+  `;
 }
 
-function mostrarCorrectas(correctas) {
-  console.log("Respuestas correctas:", correctas);
+// =======================
+// PROGRESO VISUAL
+// =======================
+
+function actualizarProgreso() {
+  const total = 9;
+  const completadas = progreso.fasesCompletadas.length;
+
+  const texto = document.getElementById("progressText");
+  const barra = document.getElementById("progressBar");
+
+  if (texto) {
+    texto.innerText = `${completadas} de ${total} fases validadas`;
+  }
+
+  if (barra) {
+    barra.style.width = `${(completadas / total) * 100}%`;
+  }
 }
 
 // =======================
 // CERTIFICADO
 // =======================
 
-function generarCertificado() {
+window.generarCertificado = function () {
   if (!progreso.nombre || progreso.nombre.trim() === "") {
     alert("Introduce tu nombre");
     return;
@@ -117,4 +124,26 @@ function generarCertificado() {
   }
 
   alert("Certificado generado\n\n" + resumen);
-}
+};
+
+// =======================
+// INICIO
+// =======================
+
+window.onload = function () {
+  const nameInput = document.getElementById("studentName");
+
+  if (progreso.nombre && nameInput) {
+    nameInput.value = progreso.nombre;
+  }
+
+  if (nameInput) {
+    nameInput.addEventListener("input", () => {
+      progreso.nombre = nameInput.value;
+      guardarProgreso();
+    });
+  }
+
+  actualizarProgreso();
+  renderFase();
+};
