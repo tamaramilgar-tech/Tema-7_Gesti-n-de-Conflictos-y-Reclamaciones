@@ -190,7 +190,7 @@ function renderTabs(phase, activeTab = "teoria") {
       <h3>Validación docente</h3>
       <p>Cuando hayas subido la evidencia al EVAGD y el docente la haya revisado, introduce el código que te facilite para validar esta fase.</p>
       <div class="validation-controls">
-        <input id="teacherCodeInput" type="text" placeholder="Código del docente" autocomplete="off" />
+        <input id="teacherCodeInput" type="password" placeholder="Código del docente" autocomplete="off" />
         <button id="validatePhaseBtn" class="primary-btn">Validar fase</button>
       </div>
       <p class="status-box ${isValidated ? "ok" : ""}" id="validationMessage">${
